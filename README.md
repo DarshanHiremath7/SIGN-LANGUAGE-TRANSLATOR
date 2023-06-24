@@ -13,23 +13,54 @@ Actively sought user feedback to further refine and improve the system's perform
 #
 
 
-
-#define asd 8 
-#define add 7 
-#define adds 6
-//#define adds A0
+#main program
+#define ina 2
+#define inb 3
+#define inc 4
+#define ind 5
+#define ine 6
+#define inf 7
+#define ing 8
+#define inh 9
+#define ini 10
+#define inj 11
+#define ink 12
+#define inl 13
+#define inm A0
+#define inn A1
+#define ino A2
+#define inp A3
+#define inq A4
+#define inr A5
+#define ins A6
+#define inu A7
 char temp = '0';
 
 void setup()
 {
-  pinMode(asd, INPUT);
-  pinMode(add, INPUT);
- pinMode(adds, INPUT);
-  
-   Serial.begin(9600);
-  
+  pinMode(ina,INPUT);
+  pinMode(inb,INPUT);
+  pinMode(inc ,INPUT);
+  pinMode(ind,INPUT);
+  pinMode(ine,INPUT);
+  pinMode(inf,INPUT);
+  pinMode(ing,INPUT);
+  pinMode(inh,INPUT);
+  pinMode(ini,INPUT);
+  pinMode(inj,INPUT);
+  pinMode(ink,INPUT);
+  pinMode(inl,INPUT);
+  pinMode(inm,INPUT);
+  pinMode(inn,INPUT);
+  pinMode(ino,INPUT);
+  pinMode(inp,INPUT);
+  pinMode(inq,INPUT);
+  pinMode(inr,INPUT);
+  pinMode(ins,INPUT);
+  pinMode(inu,INPUT);
+  Serial.begin(9600);
 }
-  void printfun(char cp) //to avoid printing repeating symbols
+void printfun(char cp) //to avoid printing repeating symbols
 {
 if(cp!=temp)
 {
@@ -37,48 +68,143 @@ Serial.print(cp);
 temp=cp;
 }
 }
+
 void loop()
 {
-  int var=digitalRead(asd);
-  int varr=digitalRead(add);
- int varrs=digitalRead(adds);
+  int vna = digitalRead(ina);
+  int vnb = digitalRead(inb);
+  int vnc = digitalRead(inc);
+  int vnd = digitalRead(ind);
+  int vne = digitalRead(ine);
+  int vnf = digitalRead(inf);
+  int vng = digitalRead(ing);
+  int vnh = digitalRead(inh);
+  int vni = digitalRead(ini);
+  int vnj = digitalRead(inj);
+  int vnk = digitalRead(ink);
+  int vnl = digitalRead(inl);
+  int vnm = analogRead(inm);
+  int vnn = analogRead(inn);
+  int vno = analogRead(ino);
+  int vnp = analogRead(inp);
+  int vnq = analogRead(inq);
+  int vnr = analogRead(inr);
+  int vns = analogRead(ins);
+  int vnu = analogRead(inu);
 
-if(varrs == HIGH)
+  if(vna == HIGH)
+  {
+    printfun("aaaaa");
+    Serial.println("aaaaa");
+  }
+  if(vnb == HIGH)
+  {
+    printfun("bbbbb ");
+    Serial.println(" bbbbb");
+  }
+   if(vnc == HIGH)
+  {
+    printfun("ccccc ");
+    Serial.println("ccccc");
+  }
+   if(vnd == HIGH)
+  {
+    printfun(" ddddd");
+    Serial.println(" ddddd");
+  }
+   if(vne== HIGH)
+  {
+    printfun("eeeee ");
+    Serial.println(" eeeee");
+  }
+   if(vnf == HIGH)
+  {
+    printfun("fffff ");
+    Serial.println("fffff ");
+  }
+   if(vng == HIGH)
+  {
+    printfun("ggggg ");
+    Serial.println("ggggg ");
+    delay(2000);
+  }
+   if(vnh == HIGH)
+  {
+    printfun("hhhhh ");
+    Serial.println(" hhhhh");
+  }
+   if(vni == HIGH)
+  {
+    printfun("iiiii ");
+    Serial.println("iiiii ");
+  }
+   if(vnj == HIGH)
+  {
+    printfun(" jjjjj");
+    Serial.println("jjjjj ");
+  }
+   if(vnk == HIGH)
+  {
+    printfun("kkkkk ");
+    Serial.println("kkkkk ");
+  }
+   if(vnl == HIGH)
+  {
+    printfun("lllll ");
+    Serial.println("lllll ");
+  }
+}
+   if(vnm >= 500)
+  {
+    printfun(" mmmmm");
+    Serial.println("mmmmm ");
+  }
+  if(vnn >= 500)
+  {
+    printfun("nnnnn ");
+    Serial.println("nnnnn ");
+  }
+  if(vno >= 500)
+  {
+    printfun(" ooooo");
+    Serial.println("ooooo ");
+  }
+  if(vnp >= 500)
+  {
+    printfun("ppppp ");
+    Serial.println("ppppp ");
+  }
+  if(vnq >= 500)
+  {
+    printfun("qqqqq ");
+    Serial.println("qqqqq ");
+  }
+  if(vnr >= 500)
+  {
+    printfun("rrrrr ");
+    Serial.println("rrrrr ");
+  }
+  if(vns >= 500)
+  {
+    printfun("sssss");
+    Serial.println("sssss ");
+  }
+  if(vnu >= 500)
+  {
+    printfun("uuuuu ");
+    Serial.println("uuuuu ");
+  }
+ delay(2000);
+ }
+
+
+
+ #calibration code
+ /? Manual callibratio
+while(1)
 {
-printfun("im done");
-Serial.println("im done");
-}
-if(var==HIGH)
-{
-printfun('A');
-Serial.println('A');
-}
-if(varr==HIGH)
-{
-printfun('B');
-Serial.println('B');
-}
-delay(1000); 
+float flexADC5 = analogRead(FLEX_PIN5);
+Serial.println(flexADC5);
+delay(800);
 }
 
-
-//if((var==HIGH)&&(varr==HIGH))
-//{
-//Serial.println('F');
-//printfun('F');
-//}
-
-
-//  if (var==HIGH)
-//  {
-//     Serial.println("im done");
-//  }
-//    if (varr==HIGH)
-//     {
-//      Serial.println("WET");
-//  }
-//  if ((var & varr) == HIGH)
-// {
-//    Serial.println("WET and dry");
-// }
-  
